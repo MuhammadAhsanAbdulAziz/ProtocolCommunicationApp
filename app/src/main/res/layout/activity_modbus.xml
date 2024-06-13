@@ -1,0 +1,227 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <!-- Modbus Variant Selection -->
+        <LinearLayout
+            android:id="@+id/modbusVariantLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Modbus Variant" />
+
+            <Spinner
+                android:id="@+id/spinnerModbusVariant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/modbus_variants" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/modbusRTUSettingsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="COM Port" />
+
+            <EditText
+                android:id="@+id/editTextCOMPort"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Baud Rate" />
+
+            <EditText
+                android:id="@+id/editTextBaudRate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Data Bits" />
+
+            <EditText
+                android:id="@+id/editTextDataBits"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Parity" />
+
+            <EditText
+                android:id="@+id/editTextParity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stop Bits" />
+
+            <EditText
+                android:id="@+id/editTextStopBits"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </LinearLayout>
+
+        <!-- TCP Connection Settings -->
+        <LinearLayout
+            android:id="@+id/tcpSettingsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="IP Address" />
+
+            <EditText
+                android:id="@+id/editTextIpAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Port Number" />
+
+            <EditText
+                android:id="@+id/editTextPort"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/buttonConnect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Connect" />
+
+        <!-- Mode Selection -->
+        <RadioGroup
+            android:id="@+id/radioGroupMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButtonMaster"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Master" />
+
+            <RadioButton
+                android:id="@+id/radioButtonSlave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Slave" />
+        </RadioGroup>
+
+        <!-- Register Configuration -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register Address" />
+
+        <EditText
+            android:id="@+id/editTextRegisterAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Value" />
+
+        <EditText
+            android:id="@+id/editTextValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButtonInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Input" />
+
+            <RadioButton
+                android:id="@+id/radioButtonHolding"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Holding" />
+
+        </RadioGroup>
+
+        <!-- Read/Write Controls -->
+        <Button
+            android:id="@+id/buttonRead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Read" />
+
+        <Button
+            android:id="@+id/buttonWrite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Write" />
+
+        <!-- Logging and Status Panel -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logs" />
+
+        <TextView
+            android:id="@+id/textViewLogs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#EFEFEF"
+            android:minHeight="200dp"
+            android:padding="8dp" />
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/switchVerboseLogging"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verbose Logging" />
+    </LinearLayout>
+</ScrollView>

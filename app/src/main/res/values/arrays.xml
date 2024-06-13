@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Data Types Array -->
+    <string-array name="data_types">
+        <item>Integer</item>
+        <item>Float</item>
+        <item>ASCII</item>
+    </string-array>
+    <string-array name="modbus_variants">
+        <item>Modbus RTU</item>
+        <item>Modbus ASCII</item>
+        <item>Modbus TCP</item>
+    </string-array>
+</resources>
